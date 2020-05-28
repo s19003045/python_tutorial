@@ -81,3 +81,99 @@ print('a' in ['a', 'b', 'c'])   # True
 print('ab' in ['a', 'b', 'c'])  # False
 
 print('=========Strings=======')
+msg = 'GoToSchool'
+print(msg[2:])   # ToSchool
+print(msg[:3])   # GoT
+print(msg[1:4])   # oTo
+print(msg[-4:-1])  # hoo
+print('len:', len(msg))  # len: 10
+
+
+# string method
+msg = '  Good job ! John'
+
+# split()
+print(msg.split())  # ['Good', 'job', '!', 'John']
+print(msg.split('!'))   # ['  Good job ', ' John']
+print(msg)  # Good job ! John  => 連同最前面的空格也會印出來
+
+# strip()
+print(msg.strip())   # Good job ! John  => 把前後的空格挪去
+print(msg)
+
+# lower()  & upper()
+print(msg.lower())   # good job ! john
+print(msg.upper())  # GOOD JOB ! JOHN
+
+# in & not in
+print('Go' in msg)   # True
+print(' ' in msg)   # True
+print('Tom' not in msg)   # True
+print('ooo' in msg)  # False
+
+a = 'hello'
+b = 'world'
+c = a + ' ' + b
+print(c)  # hello world
+
+# string format
+quantity = 3
+itemno = 567
+price = 49.95
+myorder = "I want {} pieces of item {} for {} dollars."
+
+print(myorder.format(quantity, itemno, price))
+# I want 3 pieces of item 567 for 49.95 dollars.
+
+
+# count()：某字元出現次數
+msg = 'banana is delicious'
+print(msg.count('a'))  # 3
+print(msg.count('an'))  # 2
+
+# capitalize()：頭大寫
+print(msg.capitalize())  # Banana is delicious
+
+# find()
+print(msg.find('i'))   # 7
+print(msg.find('ba'))   # 0
+print(msg.find('an', 2, 8))  # 3
+
+# index() ： 與 find() 的用法一樣
+print(msg.index('i'))   # 7
+print(msg.index('ba'))   # 0
+print(msg.index('an', 2, 8))   # 3
+
+
+# isnumeric()
+msg = '123456'
+print(msg.isnumeric())  # True
+msg = '1234abc'
+print(msg.isnumeric())  # False
+
+# isalpha()
+print(msg.isalpha())   # False
+msg = 'abc'
+print(msg.isalpha())   # True
+
+# isdigit()
+msg = '1234'
+print(msg.isdigit())   # True
+msg = 'abc'
+print(msg.isdigit())   # False
+msg = '123abc'
+print(msg.isdigit())   # False
+
+# join()
+myTuple = ("John", "Peter", "Vicky")
+x = "#".join(myTuple)
+print(x)   # John#Peter#Vicky
+
+myDict = {"name": "John", "country": "Norway"}
+mySeparator = "TEST"
+x = mySeparator.join(myDict)
+print(x)  # nameTESTcountry
+y = mySeparator.join(myDict.keys())
+print(y)  # nameTESTcountry
+z = mySeparator.join(myDict.values())
+print(z)   # JohnTESTNorway
