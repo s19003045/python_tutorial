@@ -177,3 +177,98 @@ y = mySeparator.join(myDict.keys())
 print(y)  # nameTESTcountry
 z = mySeparator.join(myDict.values())
 print(z)   # JohnTESTNorway
+
+# =====Boolean=======
+print(bool(3 > 2))   # True
+print(bool(3 != 2))   # True
+print(bool(3 == 2))   # False
+
+# print(bool(3 > '2'))
+# TypeError: '>' not supported between instances of 'int' and 'str'
+
+# 轉換後再比大小
+print(bool(3 > int('2')))  # True
+
+# 大部分都可是 True
+print(bool('hello'))   # True
+print(bool(15))  # True
+print(bool(["apple", "cherry", "banana"]))
+
+
+# 部分會判斷成 False
+print(bool(0))   # False
+print(bool(''))   # False
+print(bool(None))   # False
+print(bool([]))   # False   # False
+print(bool(()))   # False
+print(bool({}))   # False
+
+
+def isBool():
+    return True
+
+
+print(isBool())   # True
+
+
+def isGreater(a):
+    if a > 3:
+        return True
+    else:
+        return False
+
+
+print(isGreater(5))  # True
+
+
+# ====== Operator ========
+# Logical Operators
+print(True and False)   # False
+print(True and True)  # True
+print(True or False)  # True
+print(False or True)  # True
+
+# Bitwise operators(二位元運算)
+x = 1
+y = 4
+# &  =>  Sets each bit to 1 if both bits are 1
+# |  =>  Sets each bit to 1 if one of two bits is 1
+x = x & 3   # 相當於 x &= 3
+y = y | 3   # 相當於 y |= 3
+
+print(x)   # 1
+print(y)   # 7
+
+x = 0
+y = 0
+x = x & 3
+y = y | 3
+
+print(x)   # 0
+print(y)  # 3
+
+
+# Identity Operators
+print('is' is 'is')   # True
+print('is' is 'hello')  # False
+print('is' is not 'hello')   # True
+
+x = ["apple", "banana"]
+y = ["apple", "banana"]
+z = x
+
+print(x is z)
+# returns True because z is the same object as x
+
+print(x is y)  # 嚴格比較
+# returns False because x is not the same object as y, even if they have the same content
+
+print(x == y)  # 鬆散比較
+# to demonstrate the difference betweeen "is" and "==": this comparison returns True because x is equal to y
+
+
+# Membership Operators
+print('is' in 'John is boy')  # True
+print('is' not in 'afternoon')  # True
+print(1 in [1, 2, 3, 4, 5])  # True
+print(1 in (1, 2, 3, 4, 5))  # True
